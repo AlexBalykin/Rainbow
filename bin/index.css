@@ -5,4 +5,9 @@
   font-weight: bold;
   position: absolute;
 }
-
+@media (orientation: landscape) {
+  /* При вертикальной ориентации фоновым цветом сайта будет чёрный */
+  body {
+    background: #000;
+  }
+}
