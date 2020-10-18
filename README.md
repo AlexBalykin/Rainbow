@@ -1,6 +1,3 @@
----
-permalink: /bin/index.html
----
 [![Node CI](https://github.com/AlexBalykin/Rainbow/workflows/Node%20CI/badge.svg)](https://github.com/AlexBalykin/Rainbow/actions)
 
 ## Описание
