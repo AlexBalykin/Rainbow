@@ -37,8 +37,9 @@ const getRandomPosition = () => {
   const maxWidth = window.innerWidth - 180;
   const maxHeight = window.innerHeight - 50;
   const elemId = document.getElementById('style');
-  elemId.style.left = `${getRandomNum(0, maxWidth)}px`;
-  elemId.style.top = `${getRandomNum(0, maxHeight)}px`;
+  elemId.style.left = `${getRandomNum(0, maxWidth - 90)}px`; // Вычитаем половину
+  elemId.style.top = `${getRandomNum(0, maxHeight - 25)}px`; // чтобы не выходило за пределы экрана
+  console.log(elemId.style.left);
 };
 
 const runGame = () => {
@@ -48,4 +49,4 @@ const runGame = () => {
   getRandomPosition();
 };
 
-setInterval(runGame, 2000); // выполняет код раз в две секунды
+setInterval(runGame, 1500); // выполняет код раз в 1,5 секунды
