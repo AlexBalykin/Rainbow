@@ -1,3 +1,20 @@
+const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+const getSign = () => {
+  const signs = '+-×';
+  const signsCount = signs.length - 1;
+  const randomIndex = getRandomNum(0, signsCount);
+  return signs[randomIndex];
+};
+
+const calculation = () => {
+  const number1 = getRandomNum(1, 10);
+  const number2 = getRandomNum(1, 10);
+  const sign = getSign();
+  const question = `${number1} ${sign} ${number2}`;
+  return question;
+};
+
 const arrStr = [
   'КРАСНЫЙ',
   'ЗЕЛЁНЫЙ',
@@ -6,8 +23,10 @@ const arrStr = [
   'ОРАНЖЕВЫЙ',
   'ФИОЛЕТОВЫЙ',
   'ГОЛУБОЙ',
-  'ХЛОПОК',
+  // 'ХЛОПОК',
+  'calculation',
 ];
+console.log(arrStr.length);
 const arrColor = [
   '#F44336',
   '#00a651',
@@ -18,8 +37,6 @@ const arrColor = [
   '#93B4F5',
 ];
 
-const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 const getRandomColor = () => {
   const сolor = getRandomNum(0, arrColor.length - 1);
   const colorFon = getRandomNum(0, arrColor.length - 1);
@@ -27,9 +44,7 @@ const getRandomColor = () => {
     return colorFon;
   }
   // document.getElementById('style').style.color = arrColor[сolor]; (Меняет цвет текста)
-  document.getElementById('style') // Возвращает ссылку на элемент по его идентификатору
-    .style.backgroundColor = arrColor[colorFon]; // Устанавливаем цвет фона элемента
-
+  document.getElementById('style').style.backgroundColor = arrColor[colorFon]; // Возвращает ссылку на элемент по его идентификатору // Устанавливаем цвет фона элемента
   return arrColor[colorFon];
 };
 
@@ -43,10 +58,13 @@ const getRandomPosition = () => {
 };
 
 const runGame = () => {
-  const randomStr = arrStr[getRandomNum(0, arrStr.length - 1)];
+  let randomStr = arrStr[getRandomNum(0, arrStr.length - 1)];
+  if (randomStr === 'calculation') {
+    randomStr = calculation();
+  }
   document.getElementById('style').innerHTML = randomStr; // Установка содержимого для элемента
   getRandomColor();
   getRandomPosition();
 };
 
-setInterval(runGame, 1500); // выполняет код раз в 1,5 секунды
+setInterval(runGame, 1500);
