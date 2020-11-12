@@ -26,7 +26,7 @@ const arrStr = [
   // 'ХЛОПОК',
   'calculation',
 ];
-console.log(arrStr.length);
+
 const arrColor = [
   '#F44336',
   '#00a651',
@@ -54,7 +54,6 @@ const getRandomPosition = () => {
   const elemId = document.getElementById('style');
   elemId.style.left = `${getRandomNum(0, maxWidth - 90)}px`; // Вычитаем половину
   elemId.style.top = `${getRandomNum(0, maxHeight - 25)}px`; // чтобы не выходило за пределы экрана
-  console.log(elemId.style.left);
 };
 
 const runGame = () => {
