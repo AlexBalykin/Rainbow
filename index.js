@@ -22,7 +22,7 @@ const arrStr = [
   'ЖЁЛТЫЙ',
   'ОРАНЖЕВЫЙ',
   'ФИОЛЕТОВЫЙ',
-  'БЕЛЫЙ',
+  'КОРИЧНЕВЫЙ',
   'ХЛОПОК',
   'calculation',
 ];
@@ -34,7 +34,7 @@ const arrColor = [
   '#fee14c',
   '#F9A828',
   '#C264FE',
-  '#ffffff',
+  '#964B00',
 ];
 
 const getRandomColor = () => {
